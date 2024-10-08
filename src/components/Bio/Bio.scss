@@ -1,0 +1,76 @@
+@import '../../settings/include-media.scss';
+
+.bio-page {
+  margin-top: 48px;
+  background-color: white;
+  padding-top: 0px;
+
+  @include media('>=md') {
+    margin: 24px 0;
+    padding-top: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    position: relative;
+    width: fit-content;
+    color: rgb(16 185 129);
+  }
+
+  &__text {
+    color: gray;
+  }
+
+  .bio-page__title::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(167 243 208);
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    top: -4px;
+    left: -4px;
+    rotate: -3deg;
+    z-index: 1;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+
+  // .bio-page__title:hover::before {
+  //   content: '';
+  //   transition: all 0.3s ease;
+  //   rotate: 3deg;
+  // }
+
+  &__list {
+    margin-top: 24px;
+    list-style: none;
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: space-between;
+      width: 100%;
+
+      @include media('>=md') {
+        width: 50%;
+
+      }
+
+      &__subject {
+        color: rgb(16 185 129);
+        // margin: 8÷px;
+        padding: 1px;
+        // background-color: rgb(16 185 129);
+      }
+
+      &__answer {
+        color: rgb(16 185 129);
+        font-weight: 700;
+      }
+    }
+  }
+}
