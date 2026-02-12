@@ -1,0 +1,147 @@
+@import '../../settings/include-media.scss';
+
+.case-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--card-shadow);
+  border: 1px solid var(--card-border);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &__image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    @include media('>=md') {
+      height: 220px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+
+    .case-card:hover & {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(167 243 208) 0%, rgb(16 185 129 / 60%) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s ease;
+
+    &--teaser {
+      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  &__placeholder-icon {
+    font-size: 4rem;
+    transition: transform 0.4s ease;
+  }
+
+  &__coming-soon-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  &--coming-soon {
+    border: 2px dashed var(--card-border);
+    background: var(--bg-secondary);
+  }
+
+  &__year {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+  }
+
+  &__content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+
+    @include media('>=md') {
+      font-size: 1.375rem;
+    }
+  }
+
+  &__description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+
+    @include media('>=md') {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  &__tech-tag {
+    background: rgb(167 243 208 / 40%);
+    color: rgb(5 100 70);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    margin-top: auto;
+
+    &:hover {
+      color: var(--accent-dark);
+    }
+  }
+
+  &__link-arrow {
+    transition: transform 0.3s ease;
+  }
+}

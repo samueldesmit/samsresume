@@ -7,12 +7,9 @@
   position: fixed;
   top: 0;
   z-index: 9999;
-  backdrop-filter: blur(2px);
-  background-color: white;
-
-  @include media('<=md') {
-    background-color: white;
-  }
+  backdrop-filter: blur(8px);
+  background-color: var(--nav-bg);
+  transition: background-color 0.3s ease;
 }
 
 .navigation {
@@ -29,17 +26,29 @@
     padding: 16px;
   }
 
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
   &__home-logo a {
     text-decoration: none;
     display: flex;
     align-items: center;
     height: 100%;
-    color: black;
+    color: var(--text-primary);
     font-size: 30px;
 
     @include media('<=md') {
-      color: black;
+      font-size: 24px;
     }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
   }
 
   &__desktop-menu {
@@ -50,11 +59,7 @@
 
     li a {
       text-decoration: none;
-      color: black;
-
-      @include media('<=md') {
-        color: black;
-      }
+      color: var(--text-primary);
     }
 
     .active {

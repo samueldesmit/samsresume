@@ -18,11 +18,8 @@ function Home() {
           </div>
           <Bio />
           <LogoSlider />
-
-
         </div>
       </div>
-
     </>
   )
 }

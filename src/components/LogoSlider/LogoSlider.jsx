@@ -26,14 +26,16 @@ function LogoSlider() {
             slidesPerView: 6.7,
           },
         }}
-        speed={5000}
-        spaceBetween={24}
+        speed={3000}
+        spaceBetween={40}
         loop={true}
         autoplay={{
           delay: 0,
           disableOnInteraction: false,
         }}
         freeMode={true}
+        cssMode={false}
+        allowTouchMove={false}
         modules={[Autoplay]}
       >
 

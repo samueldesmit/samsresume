@@ -1,23 +1,26 @@
 import './Bio.scss';
+import { useLanguage } from '../../context/LanguageContext';
+
 function Bio() {
+  const { t } = useLanguage();
+
   return (
     <section>
       <div className='bio-page'>
-        <h5 className='bio-page__title'>Over mij</h5>
-        <p className='bio-page__text'>Ik ben een Frontend Developer met een passie voor design en technologie. Ik ben altijd op zoek naar nieuwe uitdagingen en kansen om mezelf te ontwikkelen. Ik ben een teamspeler en werk graag samen met anderen
-        </p>
+        <h5 className='bio-page__title'>{t('bio.title')}</h5>
+        <p className='bio-page__text'>{t('bio.description')}</p>
         <ul className='bio-page__list'>
           <li className='list-item'>
-            <span className='list-item__subject'>Gender:</span>
-            <span className='list-item__answer'>Man</span>
+            <span className='list-item__subject'>{t('bio.gender')}:</span>
+            <span className='list-item__answer'>{t('bio.male')}</span>
           </li>
           <li className='list-item'>
-            <span className='list-item__subject'>Geboortedatum:</span>
+            <span className='list-item__subject'>{t('bio.birthdate')}:</span>
             <span className='list-item__answer'>03 december 1992</span>
           </li>
           <li className='list-item'>
-            <span className='list-item__subject'>Nationaliteit:</span>
-            <span className='list-item__answer'>Nederlands</span>
+            <span className='list-item__subject'>{t('bio.nationality')}:</span>
+            <span className='list-item__answer'>{t('bio.dutch')}</span>
           </li>
           <li className='list-item'>
             <span className='list-item__subject'>LinkedIn:</span>

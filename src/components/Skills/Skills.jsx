@@ -87,6 +87,14 @@ function Skills() {
             </div>
           </div>
         </li>
+        <li className='skill'>
+          <span className='skill__line'>-</span>
+          <span className='skill__name'>N8N</span>
+          <div className='skill__progres_bar'>
+            <div className='skill__percentage skill__percentage-n8n'>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   )

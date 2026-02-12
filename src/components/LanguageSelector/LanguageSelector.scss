@@ -1,0 +1,31 @@
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--accent);
+    }
+
+    &--active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+  }
+
+  &__divider {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+}

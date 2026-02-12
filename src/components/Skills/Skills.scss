@@ -3,7 +3,7 @@
 .skills-page {
   max-width: 1440px;
   border-radius: 16px;
-  background-color: white;
+  background-color: var(--bg-primary);
   padding-top: 0px;
   margin: 24px 0;
 
@@ -17,14 +17,14 @@
     margin-bottom: 24px;
     position: relative;
     width: fit-content;
-    color: rgb(16 185 129);
+    color: var(--accent);
 
   }
 
   .skills-page__title::before {
     content: '';
     position: absolute;
-    background-color: rgb(167 243 208);
+    background-color: var(--accent-light);
     padding: 4px;
     width: 100%;
     height: 100%;
@@ -45,12 +45,12 @@
       gap: 16px;
 
       &__line {
-        color: rgb(16 185 129);
+        color: var(--accent);
         padding: 1px;
       }
 
       &__name {
-        color: rgb(16 185 129);
+        color: var(--accent);
         font-weight: 700;
         min-width: 150px;
       }
@@ -58,7 +58,7 @@
       &__progres_bar {
         width: 100px;
         height: 7px;
-        background-color: rgb(167 243 208);
+        background-color: var(--accent-light);
 
         border-radius: 5px;
         position: relative;
@@ -70,7 +70,7 @@
           left: 0;
           top: 0;
           height: 7px;
-          background-color: rgb(16 185 129);
+          background-color: var(--accent);
         }
 
         .skill__percentage-html {
@@ -80,10 +80,13 @@
         .skill__percentage-make {
           width: 60%;
         }
+        .skill__percentage-n8n {
+          width: 80%;
+        }
 
 
         .skill__percentage-css {
-          width: 90%;
+          width: 95%;
         }
 
         .skill__percentage-react {
@@ -91,15 +94,15 @@
         }
 
         .skill__percentage-js {
-          width: 65%;
+          width: 75%;
         }
 
         .skill__percentage-figma {
-          width: 55%;
+          width: 85%;
         }
 
         .skill__percentage-tailwind {
-          width: 65%;
+          width: 95%;
         }
       }
 

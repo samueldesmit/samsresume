@@ -1,9 +1,11 @@
 import LogoSlider from '../../components/LogoSlider/LogoSlider';
 import './Contact.scss';
 import { useState } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 
 function Contact() {
-  const [message, setMessage] = useState(""); // State to store success/error message
+  const { t } = useLanguage();
+  const [message, setMessage] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -25,27 +27,27 @@ function Contact() {
       }).then((res) => res.json());
 
       if (res.success) {
-        setMessage("Form submitted successfully!");
+        setMessage(t('contact.success'));
       } else {
-        setMessage("Failed to submit form. Please try again.");
+        setMessage(t('contact.error'));
       }
     } catch (error) {
-      setMessage("An error occurred. Please try again later.");
+      setMessage(t('contact.error'));
     }
   };
 
   return (
     <div className="contact-page">
       <div className='contact-page__inner'>
-        <h5 className='contact-page-title'>Contact</h5>
-        <p className='contact-page-text'>Bedankt dat je de tijd hebt genomen om mijn CV te bekijken! Ik zou het tof vinden om eens te praten over wat we voor elkaar kunnen betekenen en hoe mijn ervaring en skills passen bij jullie team. Stuur me gerust een berichtje voor een gesprek of om iets af te spreken. Ik kijk ernaar uit om van je te horen!</p>
+        <h5 className='contact-page-title'>{t('contact.title')}</h5>
+        <p className='contact-page-text'>{t('contact.text')}</p>
         <form onSubmit={onSubmit}>
           <div className='input-fields'>
-            <input type="text" name="name" placeholder="Naam" required />
-            <input type="email" name="email" placeholder="Emailadres" required />
+            <input type="text" name="name" placeholder={t('contact.name')} required />
+            <input type="email" name="email" placeholder={t('contact.email')} required />
           </div>
-          <textarea rows="10" cols="50" name="message" placeholder="Je bericht" required></textarea>
-          <button type="submit">Verstuur bericht</button>
+          <textarea rows="10" cols="50" name="message" placeholder={t('contact.message')} required></textarea>
+          <button type="submit">{t('contact.send')}</button>
         </form>
         {message && <p className="success-message">{message}</p>}
         <LogoSlider />

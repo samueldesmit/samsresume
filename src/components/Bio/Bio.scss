@@ -2,7 +2,7 @@
 
 .bio-page {
   margin-top: 48px;
-  background-color: white;
+  background-color: var(--bg-primary);
   padding-top: 0px;
 
   @include media('>=md') {
@@ -16,17 +16,17 @@
     margin-bottom: 24px;
     position: relative;
     width: fit-content;
-    color: rgb(16 185 129);
+    color: var(--accent);
   }
 
   &__text {
-    color: gray;
+    color: var(--text-secondary);
   }
 
   .bio-page__title::before {
     content: '';
     position: absolute;
-    background-color: rgb(167 243 208);
+    background-color: var(--accent-light);
     padding: 4px;
     width: 100%;
     height: 100%;
@@ -61,14 +61,12 @@
       }
 
       &__subject {
-        color: rgb(16 185 129);
-        // margin: 8÷px;
+        color: var(--accent);
         padding: 1px;
-        // background-color: rgb(16 185 129);
       }
 
       &__answer {
-        color: rgb(16 185 129);
+        color: var(--accent);
         font-weight: 700;
       }
     }

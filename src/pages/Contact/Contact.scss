@@ -15,13 +15,13 @@
       margin-bottom: 24px;
       position: relative;
       width: fit-content;
-      color: rgb(16 185 129);
+      color: var(--accent);
     }
 
     .contact-page-title::before {
       content: '';
       position: absolute;
-      background-color: rgb(167 243 208);
+      background-color: var(--accent-light);
       padding: 4px;
       width: 100%;
       height: 100%;
@@ -35,8 +35,8 @@
     .contact-page-text {
       margin: 24px 0;
       border-radius: 16px;
-      background-color: white;
-      color: gray;
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
     }
 
     form {
@@ -53,10 +53,13 @@
           width: 100%;
           padding: 8px;
           border-radius: 8px;
-          border: 1px solid gray;
+          border: 1px solid var(--card-border);
+          background-color: var(--bg-secondary);
+          color: var(--text-primary);
 
           &:focus {
             outline: none;
+            border-color: var(--accent);
           }
         }
 
@@ -66,11 +69,14 @@
         font-size: 16px;
         padding: 8px;
         border-radius: 8px;
-        border: 1px solid gray;
+        border: 1px solid var(--card-border);
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
         resize: none;
 
         &:focus {
           outline: none;
+          border-color: var(--accent);
         }
       }
 
@@ -78,15 +84,15 @@
         padding: 8px;
         border-radius: 8px;
         border: none;
-        background-color: rgb(16 185 129);
+        background-color: var(--accent);
         color: white;
         font-weight: 700;
         width: fit-content;
 
         &:hover {
           transition: all 0.3s ease;
-          background-color: rgb(167 243 208);
-          color: black;
+          background-color: var(--accent-light);
+          color: var(--text-primary);
           cursor: pointer;
         }
       }

@@ -1,0 +1,137 @@
+@import '../../settings/include-media.scss';
+
+// Initial hidden state for GSAP animations
+.gsap-hidden {
+  opacity: 0.7;
+  transform: translateY(20px);
+}
+
+.cases-container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+
+  @include media('>=md') {
+    padding-top: 100px;
+  }
+
+  &__inner {
+    max-width: 1024px;
+    padding: 16px;
+    width: 100%;
+
+    @include media('>=md') {
+      padding: 24px;
+    }
+  }
+}
+
+// Hero Section
+.cases-hero {
+  margin-bottom: 48px;
+
+  @include media('>=md') {
+    margin-bottom: 64px;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+
+    @include media('>=md') {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__title-accent {
+    color: var(--accent);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: -5px;
+      right: -5px;
+      height: 12px;
+      background-color: var(--accent-light);
+      z-index: -1;
+      transform: rotate(-2deg);
+    }
+  }
+
+  &__subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @include media('>=md') {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+// Cases Grid
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 64px;
+
+  @include media('>=md') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+// CTA Section
+.cases-cta {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--accent-light);
+  border-radius: 16px;
+  margin-bottom: 32px;
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+
+    @include media('>=md') {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgb(16 185 129 / 30%);
+
+    &:hover {
+      background-color: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgb(16 185 129 / 40%);
+    }
+  }
+}
