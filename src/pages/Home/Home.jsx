@@ -3,6 +3,7 @@ import Skills from '../../components/Skills/Skills';
 import LogoSlider from '../../components/LogoSlider/LogoSlider';
 import HomeHero from '../../components/HomeHero/HomeHero';
 import Language from '../../components/Language/Language';
+import Tools from '../../components/Tools/Tools';
 import Bio from '../../components/Bio/Bio';
 function Home() {
 
@@ -16,6 +17,7 @@ function Home() {
             <Skills />
             <Language />
           </div>
+          <Tools />
           <Bio />
           <LogoSlider />
         </div>

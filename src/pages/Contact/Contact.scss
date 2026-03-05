@@ -1,101 +1,161 @@
+@import '../../settings/include-media.scss';
+
 .contact-page {
-  margin-top: 66px;
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   width: 100%;
+  min-height: 100vh;
+
+  @include media('>=md') {
+    padding-top: 100px;
+  }
 
   &__inner {
     max-width: 1024px;
     padding: 16px;
     width: 100%;
 
-    .contact-page-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      position: relative;
-      width: fit-content;
+    @include media('>=md') {
+      padding: 24px;
+    }
+  }
+
+  &__hero {
+    text-align: center;
+    margin-bottom: 48px;
+
+    @include media('>=md') {
+      margin-bottom: 64px;
+    }
+  }
+
+  .contact-page-title {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+
+    @include media('>=md') {
+      font-size: 3.5rem;
+    }
+
+    &__accent {
       color: var(--accent);
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: -5px;
+        right: -5px;
+        height: 12px;
+        background-color: var(--accent-light);
+        z-index: -1;
+        transform: rotate(-2deg);
+      }
+    }
+  }
+
+  .contact-page-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @include media('>=md') {
+      font-size: 1.125rem;
+    }
+  }
+
+  form {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    @include media('>=md') {
+      padding: 32px;
+      gap: 24px;
     }
 
-    .contact-page-title::before {
-      content: '';
-      position: absolute;
-      background-color: var(--accent-light);
-      padding: 4px;
-      width: 100%;
-      height: 100%;
-      top: -4px;
-      left: -4px;
-      rotate: -3deg;
-      z-index: 1;
-      opacity: 0.3;
-    }
-
-    .contact-page-text {
-      margin: 24px 0;
-      border-radius: 16px;
-      background-color: var(--bg-primary);
-      color: var(--text-secondary);
-    }
-
-    form {
+    .input-fields {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 16px;
 
-      .input-fields {
-        display: flex;
-        gap: 24px;
-
-        input {
-          font-size: 16px;
-          width: 100%;
-          padding: 8px;
-          border-radius: 8px;
-          border: 1px solid var(--card-border);
-          background-color: var(--bg-secondary);
-          color: var(--text-primary);
-
-          &:focus {
-            outline: none;
-            border-color: var(--accent);
-          }
-        }
-
+      @include media('>=md') {
+        flex-direction: row;
+        gap: 20px;
       }
 
-      textarea {
+      input {
         font-size: 16px;
-        padding: 8px;
-        border-radius: 8px;
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 10px;
         border: 1px solid var(--card-border);
         background-color: var(--bg-secondary);
         color: var(--text-primary);
-        resize: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
         &:focus {
           outline: none;
           border-color: var(--accent);
-        }
-      }
-
-      button {
-        padding: 8px;
-        border-radius: 8px;
-        border: none;
-        background-color: var(--accent);
-        color: white;
-        font-weight: 700;
-        width: fit-content;
-
-        &:hover {
-          transition: all 0.3s ease;
-          background-color: var(--accent-light);
-          color: var(--text-primary);
-          cursor: pointer;
+          box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
         }
       }
     }
+
+    textarea {
+      font-size: 16px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      resize: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+      }
+    }
+
+    button {
+      padding: 12px 32px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--accent);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+
+      &:hover {
+        background-color: var(--accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      }
+    }
+  }
+
+  .success-message {
+    text-align: center;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 16px;
   }
 }

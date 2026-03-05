@@ -3,10 +3,12 @@ import gsap from 'gsap'
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/all';
 import { useRef } from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Skills() {
+  const { t } = useLanguage();
   const scrollRef = useRef();
   useGSAP(() => {
     const skills = gsap.utils.toArray('.skill__percentage');
@@ -29,7 +31,7 @@ function Skills() {
 
   return (
     <div className='skills-page'>
-      <h5 className='skills-page__title'>Mijn stack</h5>
+      <h5 className='skills-page__title'>{t('skills.title')}</h5>
       <ul className='skills-list' ref={scrollRef}>
         <li className='skill'>
           <span className='skill__line'>-</span>

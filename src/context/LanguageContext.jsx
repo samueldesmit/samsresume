@@ -23,6 +23,10 @@ export const translations = {
     skills: {
       title: "Skills",
     },
+    // Tools
+    tools: {
+      title: "Mijn tools",
+    },
     // Language
     language: {
       title: "Talen",
@@ -95,6 +99,10 @@ export const translations = {
     // Skills
     skills: {
       title: "Skills",
+    },
+    // Tools
+    tools: {
+      title: "My tools",
     },
     // Language
     language: {

@@ -1,5 +1,5 @@
 import './Nav.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
@@ -8,6 +8,11 @@ import { useLanguage } from '../../context/LanguageContext';
 function Nav() {
   const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
 
   return (
     <div className='outer-container'>

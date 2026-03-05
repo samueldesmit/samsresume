@@ -12,6 +12,7 @@
   --accent: rgb(16, 185, 129);
   --accent-light: rgb(167, 243, 208);
   --accent-dark: rgb(5, 150, 105);
+  --mobile-menu-bg: rgba(255, 255, 255, 0.85);
 }
 
 [data-theme="dark"] {
@@ -27,6 +28,7 @@
   --accent: rgb(16, 185, 129);
   --accent-light: rgb(16, 185, 129, 0.2);
   --accent-dark: rgb(52, 211, 153);
+  --mobile-menu-bg: rgba(15, 15, 15, 0.85);
 }
 
 * {

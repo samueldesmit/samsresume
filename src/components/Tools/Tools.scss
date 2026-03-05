@@ -1,0 +1,60 @@
+@import '../../settings/include-media.scss';
+
+.tools-page {
+  border-radius: 16px;
+  padding-top: 0px;
+  margin: 24px 0;
+
+  @include media('>=md') {
+    padding-top: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    position: relative;
+    width: fit-content;
+    color: var(--accent);
+  }
+
+  .tools-page__title::before {
+    content: '';
+    position: absolute;
+    background-color: var(--accent-light);
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    top: -4px;
+    left: -4px;
+    rotate: -3deg;
+    z-index: 1;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+  }
+
+  .tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &__tag {
+      background: rgb(167 243 208 / 40%);
+      color: rgb(5 100 70);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.2s ease;
+
+      [data-theme="dark"] & {
+        background: rgb(16 185 129 / 20%);
+        color: rgb(167 243 208);
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
